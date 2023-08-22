@@ -1,0 +1,38 @@
+.Login{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 30%;
+    margin-left: 33%;
+    border-radius: 10px;
+    /* margin-top: 13%; */
+    padding-top: 13%;
+    padding-bottom: 13%;
+    background-color: white;
+}
+
+.LoginContainer{
+    padding-top: 3%;
+    /* padding-bottom: 20%; */
+    height: 100vh;
+    background-color: rgb(9, 9, 110);
+}
+/* .mb-2.card.border
+{
+    
+} */
+
+.form-control{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.Login button{
+    margin-left: 40%;
+    background-color: #0046ff;
+}
+
+.Login button:hover{
+    margin-left: 40%;
+    background-color: rgb(5, 5, 104);
+}
