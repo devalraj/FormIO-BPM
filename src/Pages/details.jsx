@@ -8,7 +8,7 @@ import Loading from "../components/Loading";
 export default function DetailsPage() {
     const nav = useNavigate();
     const [formdata, setFormData] = useState(undefined);
-    const { auth } = useAuth();
+    const { auth, setAuth } = useAuth();
     useEffect(() => {
         const StartUp = async () => {
             try {
@@ -40,6 +40,7 @@ export default function DetailsPage() {
                     }
                 });
             if (res.status === 200) {
+                setAuth({ ...auth, name: data.data.name });
                 nav('/home');
             }
             else {

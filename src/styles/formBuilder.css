@@ -1,0 +1,63 @@
+.formBuilder{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.mainForm{
+    background-color: rgb(6, 6, 99);
+    height: 130vh;
+}
+.formContainer{
+    margin-top: 10vh;
+    padding: 2vh;
+    background-color: white;
+    width: 50%;
+    /* height: 80vh; */
+    border-radius: 5px;
+}
+
+/* .btn{
+    margin-left: 25%;
+} */
+
+.btndiv{
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn1{
+    color:white;
+    border-radius: 6px;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.TopView input{
+    padding-left: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.TopView{
+    padding:20px;
+    padding-left: 40%;
+
+}
+
+.formContainer2{
+    background-color: white;
+    padding: 3%;
+    /* height: 100%; */
+}
+
+
+.btn2{
+    color:white;
+    border-radius: 6px;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin: 10px ;
+}

@@ -1,0 +1,43 @@
+.policy-div {
+    background-color: rgb(9, 9, 110);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.policy-form {
+    background-color: white;
+    width: 40%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.policy-form2 {
+    background-color: white;
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.submit{
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #007bff;;
+    border: none;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+.submit:hover{
+    font-weight: bold;
+    background-color: #00438b;
+    color: white;
+}

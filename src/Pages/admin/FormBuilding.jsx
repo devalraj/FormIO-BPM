@@ -3,6 +3,7 @@ import FormComponent from "../../components/FormComponent";
 import FormBuilderComp from "../../components/FormBuilderComponent";
 import { axiosPrivate } from "../../api/axios";
 import { useNavigate } from "react-router-dom";
+import "../../styles/formBuilder.css"
 
 export default function FormBuildingPage({ Update, Data, formname }) {
     const nav = useNavigate();
@@ -34,7 +35,6 @@ export default function FormBuildingPage({ Update, Data, formname }) {
         }
     };
     const handleUpdate = async () => {
-        console.log()
         try {
             const res = await axiosPrivate.put('/update',
                 { Data: { Name: formName, Data: JSON.stringify(formData) } });
@@ -49,20 +49,32 @@ export default function FormBuildingPage({ Update, Data, formname }) {
     return (
         <div>
             {toggle ? (
-                <div>
-                    <label>Form Name</label>
-                    <input required type="text" value={formName} onChange={(e) => setFormName(e.target.value)} />
-                    <button disabled={formData.display === 'form'} onClick={() => setFormData({ ...formData, display: "form" })}>form</button>
-                    <button disabled={formData.display === 'wizard'} onClick={() => setFormData({ ...formData, display: "wizard" })}>wizard</button>
-                    <FormBuilderComp formJSON={formData} onChange={(data) => { setFormData(data) }} />
-                    <button onClick={() => setToggle(!toggle)}>display Form</button>
-                    <button onClick={(Update !== undefined && Update === true) ? handleUpdate : handleSave}>{(Update !== undefined && Update === true) ? 'Update' : 'Save'}</button>
+                <div className="mainForm">
+                    <div className="TopView">
+                        {/* <label className="FormName">Form Name</label> */}
+                        <input required type="text" placeholder="Enter form name" value={formName} onChange={(e) => setFormName(e.target.value)} />
+                        <button className="btn1" disabled={formData.display === 'form'} onClick={() => setFormData({ ...formData, display: "form" })}>form</button>
+                        <button className="btn1" disabled={formData.display === 'wizard'} onClick={() => setFormData({ ...formData, display: "wizard" })}>wizard</button>
+                    </div>
+                    <div className="formContainer2">
+                        <FormBuilderComp formJSON={formData} onChange={(data) => { setFormData(data) }} />
+                    </div>
+                    <div className="btndiv">
+                        <button className="btn2" onClick={() => setToggle(!toggle)}>display Form</button>
+                        <button className="btn2" onClick={(Update !== undefined && Update === true) ? handleUpdate : handleSave}>{(Update !== undefined && Update === true) ? 'Update' : 'Save'}</button>
+                    </div>
                 </div>
             ) :
                 (
-                    <div>
-                        <FormComponent form={formData} />
-                        <button onClick={() => setToggle(!toggle)}>display Form builder</button>
+                    <div className="mainForm">
+                        <div className="formBuilder">
+                            <div className="formContainer">
+                                <FormComponent form={formData} />
+                            </div>
+                        </div>
+                        <div className="btndiv">
+                            <button className="btn1" onClick={() => setToggle(!toggle)}>Display Form Builder</button>
+                        </div>
                     </div>
                 )
             }
