@@ -4,8 +4,6 @@ import axios, { axiosPrivate } from "../api/axios";
 import Loading from "../components/Loading";
 import FormComponent from "../components/FormComponent";
 import { ToastContainer, toast } from 'react-toastify';
-import useAuth from "../hooks/useAuth";
-// import '../styles/'
 
 const docs = ["PartyInfoDoc", "MopedInfoDoc", "CoveragesDoc", "AcceptanceDoc", "SummaryDoc", "ConfirmationDoc"];
 const FORMS = ["Party Info", "Vehicle Info", "Coverage", "Acceptance", "Summary", "Confirmation"];
@@ -23,7 +21,6 @@ export default function InsurancePage() {
     const formValues = useRef({});
     const formdata = useRef(undefined);
     const location = useLocation();
-    const { auth } = useAuth();
     const Uid = useRef('');
     const PolicyName = useRef('');
 
